@@ -17,56 +17,78 @@ font-weight:300;
 text-shadow: 6px 6px 6px black;
 }
 
-#left{
+#image{
 position:absolute;
-left:5px;
+z-index:2;
+
 }
 #right{
 position:absolute;
-right:5px;
+right:20px;
+z-index:9999;
+}
+#image{
+position:relative;
+top:-40px;
+left:-10px;
+}
+#shan{
+position:absolute;;
+left:20px;
+top:100px;
+z-index:9999;
+}
+
+
+
 }
 
 </style>
 
-<h1>Shan The Man</h1>
-</head>
-<img src = "../static/arrow-left.png" width="50px" height="50px" id="aleft">
-<img src = "../static/arrow-right.png" width="50px" height="50px" id="right">
+<h1 id="header">Shan The Man</h1>
 
+</head>
 <body>
-  <div id="image">
-    <img src = "../static/beach.jpg" width="50px" height="50px" id="a1">
-    <img src = "../static/iran.png" width="50px" height="50px" id="a2">
-    <img src = "../static/japan.jpg" width="50px" height="50px" id="a3">
-    <img src = "../static/jam.jpg" width="50px" height="50px" id="a4">
-    <img src = "../static/kkk.jpg" width="50px" height="50px" id="a5">
-    <img src = "../static/pan.jpg" width="50px" height="50px" id="a6">
-    <img src = "../static/ladiesman.jpg" width="50px" height="50px" id="a7">
-    <img src = "../static/van.jpg" width="50px" height="50px" id="a8">
-    <img src = "../static/ram.jpeg" width="50px" height="50px" id="a9">
-    <img src = "../static/ram_animal.jpg" width="50px" height="50px" id="a10">
-    <img src = "../static/toucan.jpg" width="50px" height="50px" id="a11">
-    <img src = "../static/tarzan.jpg" width="50px" height="50px" id="a12">
-    <img src = "../static/flan.jpeg" width="50px" height="50px" id="a13">
-    <img src = "../static/fan.jpg" width="50px" height="50px" id="a14">
-    <img src = "../static/can.jpg" width="50px" height="50px" id="a15">
-    <img src = "../static/spam.jpeg" width="50px" height="50px" id="a16">
+
+<img src = "../static/arrow-right.png" width="50px" height="50px" id="right">
+<img src = "../static/shan.png" width="282px" height="608px" id="shan">
+<center>
+  <div id="image">  
+    <img src = "../static/beach.jpg" width="90%" height="90%" id="a1">
+    <img src = "../static/iran.png" width="50%" height="90%" id="a2">
+    <img src = "../static/japan.jpg" width="90%" height="90%" id="a3">
+    <img src = "../static/jam.jpg" width="90%" height="90%" id="a4">
+    <img src = "../static/kkk.jpg" width="90%" height="90%" id="a5">
+    <img src = "../static/pan.jpg" width="90%" height="90%" id="a6">
+    <img src = "../static/ladiesman.jpg" width="90%" height="90%" id="a7">
+    <img src = "../static/van.jpg" width="90%" height="90%" id="a8">
+    <img src = "../static/ram.jpeg" width="90%" height="90%" id="a9">
+    <img src = "../static/ram_animal.jpg" width="90%" height="90%" id="a10">
+    <img src = "../static/toucan.jpg" width="90%" height="90%" id="a11">
+    <img src = "../static/tarzan.jpg" width="90%" height="90%" id="a12">
+    <img src = "../static/flan.jpeg" width="90%" height="90%" id="a13">
+    <img src = "../static/fan.jpg" width="90%" height="90%" id="a14">
+    <img src = "../static/can.jpg" width="90%" height="90%" id="a15">
+    <img src = "../static/spam.jpeg" width="90%" height="90%" id="a16">
   </div>
+</center>
 </body>
 
 <script src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
 
 <script>
-var imgNum = 1;
+var imgNum = 0;
+//Header text source array
+var shanIs = new Array("Shan has a tan","Shan is in iran","Now Shan is in Japan","Shan loves jam","Shan is with the...Klan?","Shan is in a pan!","Oh Shan that ladies man","Shan has a really...uh...cool van","Shan has a lot of ram","Shan has a pet ram","Shan also has a toucan - name Sam!","Shan is friends with Tarzan","Shan really likes to eat flan","When Shan feels toasty he sits in front of a fan","Sometimes Shan chills on the can","Shan says we should all eat spam"); 
 
-for (var i=2;i<17;i++){
+for (var i=1;i<17;i++){
 $("#a" + i).hide();}
-
+//Right arrow moves images to the right
 $("#right").click(function(){
 if(imgNum<16){
 imgNum++;}
 else{imgNum = 1;}
-
+$("#header").text(shanIs[imgNum-1]);
 var imgID = '#a' + imgNum;
 $(imgID).slideDown();
 if(imgNum == 1){
@@ -75,7 +97,6 @@ $('#a16').hide();
 else{
 $('#a' + (imgNum-1)).hide();
 }});
-
 
 </script>
 
