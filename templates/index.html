@@ -1,0 +1,82 @@
+<html>
+<head>
+
+<style type = "text/css">
+body {
+background-image:url('../static/background.png');
+background-repeat:repeat;
+}
+
+h1{
+font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+font-size:60px;
+color:white;
+text-align:center;
+text-decoration:blink;
+font-weight:300;
+text-shadow: 6px 6px 6px black;
+}
+
+#left{
+position:absolute;
+left:5px;
+}
+#right{
+position:absolute;
+right:5px;
+}
+
+</style>
+
+<h1>Shan The Man</h1>
+</head>
+<img src = "../static/arrow-left.png" width="50px" height="50px" id="aleft">
+<img src = "../static/arrow-right.png" width="50px" height="50px" id="right">
+
+<body>
+  <div id="image">
+    <img src = "../static/beach.jpg" width="50px" height="50px" id="a1">
+    <img src = "../static/iran.png" width="50px" height="50px" id="a2">
+    <img src = "../static/japan.jpg" width="50px" height="50px" id="a3">
+    <img src = "../static/jam.jpg" width="50px" height="50px" id="a4">
+    <img src = "../static/kkk.jpg" width="50px" height="50px" id="a5">
+    <img src = "../static/pan.jpg" width="50px" height="50px" id="a6">
+    <img src = "../static/ladiesman.jpg" width="50px" height="50px" id="a7">
+    <img src = "../static/van.jpg" width="50px" height="50px" id="a8">
+    <img src = "../static/ram.jpeg" width="50px" height="50px" id="a9">
+    <img src = "../static/ram_animal.jpg" width="50px" height="50px" id="a10">
+    <img src = "../static/toucan.jpg" width="50px" height="50px" id="a11">
+    <img src = "../static/tarzan.jpg" width="50px" height="50px" id="a12">
+    <img src = "../static/flan.jpeg" width="50px" height="50px" id="a13">
+    <img src = "../static/fan.jpg" width="50px" height="50px" id="a14">
+    <img src = "../static/can.jpg" width="50px" height="50px" id="a15">
+    <img src = "../static/spam.jpeg" width="50px" height="50px" id="a16">
+  </div>
+</body>
+
+<script src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
+
+<script>
+var imgNum = 1;
+
+for (var i=2;i<17;i++){
+$("#a" + i).hide();}
+
+$("#right").click(function(){
+if(imgNum<16){
+imgNum++;}
+else{imgNum = 1;}
+
+var imgID = '#a' + imgNum;
+$(imgID).slideDown();
+if(imgNum == 1){
+$('#a16').hide();
+}
+else{
+$('#a' + (imgNum-1)).hide();
+}});
+
+
+</script>
+
+</html>
